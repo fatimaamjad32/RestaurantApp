@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FBF4F4"
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="SignUp"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/registeremail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/edittextbg"
+        android:backgroundTint="#C0FBEE"
+        android:hint="Enter Your Email"
+        android:drawableLeft="@drawable/baseline_email_24"
+        android:paddingLeft="15dp"
+        android:drawablePadding="20dp"
+        />
+
+    <EditText
+        android:id="@+id/registerpassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/edittextbg"
+        android:backgroundTint="#C0FBEE"
+        android:hint="Enter Your Password"
+        android:inputType="textPassword"
+        android:drawableLeft="@drawable/baseline_key_24"
+        android:paddingLeft="15dp"
+        android:drawablePadding="20dp"/>
+    <EditText
+        android:id="@+id/registerconfirmpassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/edittextbg"
+        android:backgroundTint="#C0FBEE"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:drawableLeft="@drawable/baseline_security_24"
+        android:paddingLeft="15dp"
+        android:drawablePadding="20dp"/>
+
+    <TextView
+        android:id="@+id/btnregister"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edittextbg"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="SignUp"
+        android:textSize="19sp"
+        android:backgroundTint="@color/seagreen"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Already have an account ?"
+            android:textSize="18sp"
+            />
+        <TextView
+            android:id="@+id/trlogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textColor="@color/seagreen"
+            android:textSize="18sp"
+            android:layout_marginLeft="10dp"
+
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

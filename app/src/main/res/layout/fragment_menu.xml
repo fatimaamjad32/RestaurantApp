@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FBF4F4"
+
+    tools:context=".MenuFragment">
+
+    <TextView
+        android:id="@+id/they"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hey"
+        android:textColor="@color/black"
+        android:layout_marginLeft="30dp"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="15dp"/>
+    <TextView
+        android:id="@+id/tready"
+        android:layout_below="@id/they"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Your Cravings "
+        android:textColor="@color/black"
+        android:layout_marginLeft="30dp"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        />
+    <ImageView
+        android:id="@+id/popupbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_more_vert_24"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"/>
+
+
+<!--    <EditText-->
+<!--        android:id="@+id/editsearch"-->
+<!--android:layout_below="@+id/tready"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:maxLines="1"-->
+<!--        android:background="@drawable/search_background"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:hint="Search your cravings"-->
+<!--        android:textStyle="italic"-->
+<!--        android:textSize="15sp"-->
+<!--        android:drawableStart="@drawable/baseline_search_24"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:drawablePadding="10dp"/>-->
+
+    <TextView
+        android:id="@+id/editsearch"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@+id/tready"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="text"
+        android:singleLine="true"
+        android:background="@drawable/search_background"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:hint="Find Your Food"
+        android:textStyle="italic"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:textAlignment="textStart"
+        android:drawableStart="@drawable/baseline_search_24"
+        android:paddingLeft="20dp"
+        android:drawablePadding="10dp" />
+
+
+    <!--    <androidx.appcompat.widget.SearchView-->
+<!--        android:id="@+id/editsearch"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_below="@id/tready"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:background="@drawable/search_background"-->
+<!--       />-->
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/rvsearch"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="20dp"-->
+<!--        android:layout_below="@id/editsearch"/>-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/editsearch"
+        android:id="@+id/rvdeals"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="20dp"/>
+
+</RelativeLayout>

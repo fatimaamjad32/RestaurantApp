@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBF4F4"
+    tools:context=".HomeFragment">
+
+        <RelativeLayout
+            android:id="@+id/rfirst"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:baselineAligned="false">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+
+                    android:text="Feeling Hungry ?"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#02785D"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Order And Eat"
+                    android:textColor="@color/seagreen"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+
+
+                <ImageView
+                    android:id="@+id/icart"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/cart"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="35dp"
+                    android:scaleType="fitXY" />
+            <TextView
+                android:id="@+id/nitemcart"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/badge_shape"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="32dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/white"/>
+
+        </RelativeLayout>
+
+<!--        <EditText-->
+<!--            android:id="@+id/editsearch"-->
+<!--            android:layout_below="@+id/rfirst"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:background="@drawable/search_background"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:hint="Find Your Food"-->
+<!--            android:textStyle="italic"-->
+<!--            android:textSize="15sp"-->
+<!--            android:drawableStart="@drawable/baseline_search_24"-->
+<!--            android:paddingLeft="20dp"-->
+<!--            android:drawablePadding="10dp"/>-->
+
+        <LinearLayout
+            android:id="@+id/lbanner"
+            android:layout_below="@id/rfirst"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:orientation="horizontal"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/seagreen_banner">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bannerimg"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="30dp"
+
+                android:layout_marginTop="25dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Free Delivery"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="JULY 23 -- JULY 29"
+                    android:textStyle="bold|italic"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/tdeals"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Explore\nDeals"
+                    android:background="@drawable/edittextbg"
+                    android:backgroundTint="#02785D"
+                    android:layout_marginLeft="3dp"
+                   android:layout_marginTop="15dp"
+                    android:textColor="@color/white"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold|italic"
+                   />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tcategories"
+            android:layout_below="@+id/lbanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select by category"
+            android:textStyle="bold|italic"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+
+            android:textColor="@color/black"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@+id/tcategories"
+            android:id="@+id/rvcategories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="22dp"
+            android:layout_marginTop="5dp"
+            android:paddingRight="22dp"/>
+
+        <TextView
+            android:id="@+id/tpopular"
+            android:layout_below="@+id/rvcategories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Popular menu items"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold|italic"
+            android:textSize="18sp"
+            android:layout_marginLeft="30dp"
+
+
+            android:textColor="@color/black"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvpopular"
+            android:layout_below="@id/tpopular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+android:layout_marginTop="5dp"
+            android:paddingLeft="22dp"
+            android:paddingRight="22dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C0FBEE"
+    tools:context=".EditDrinkActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/tbarcnote"
+        android:background="@color/white">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="12dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:hint="Enter Your Title"
+            android:id="@+id/burgertitle"/>
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.cardview.widget.CardView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:cardCornerRadius="100dp"
+        android:id="@+id/cimgcard"
+        android:layout_below="@id/tbarcnote"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:id="@+id/insertimg"
+            />
+
+    </androidx.cardview.widget.CardView>
+    <View
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_above="@id/burgerdescription"
+
+        android:background="@color/black"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:textSize="15sp"
+        android:background="#C0FBEE"
+        android:gravity="top|left"
+        android:textColor="@color/black"
+        android:hint="Enter Description"
+        android:layout_below="@id/btnburgerpic"
+        android:padding="15dp"
+        android:id="@+id/burgerdescription"/>
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@id/burgerdescription"
+        android:background="@color/black"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:background="#C0FBEE"
+        android:gravity="top|left"
+        android:textColor="@color/black"
+        android:hint="Enter Price"
+        android:layout_below="@id/line"
+        android:padding="15dp"
+        android:inputType="number"
+        android:id="@+id/burgerfee"/>
+    <View
+        android:id="@+id/line3"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@id/burgerfee"
+        android:background="@color/black"/>
+
+
+    <Button
+        android:id="@+id/btnburgerpic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cimgcard"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#02785D"
+        android:text="Add Picture"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/btnburgersave"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/line3"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#02785D"
+        android:text="Save" />
+
+
+
+</RelativeLayout>

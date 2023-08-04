@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/home2layout"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/search_background"
+    android:orientation="horizontal">
+
+<!--    <TextView-->
+<!--        android:background="@drawable/search_background"-->
+<!--        android:padding="10dp"-->
+<!--        android:id="@+id/torderdetails"-->
+<!--        android:textSize="19sp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"/>-->
+<!--    <ImageView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/menupopbutton"-->
+<!--        android:src="@drawable/baseline_more_vert_24"-->
+<!--        android:layout_weight="0"></ImageView>-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/torderdetails"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_weight="1">
+
+    </TextView>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/menupopbutton"
+        android:src="@drawable/baseline_more_vert_24"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        ></ImageView>
+
+</LinearLayout>

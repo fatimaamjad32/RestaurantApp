@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FBF4F4"
+    tools:context=".LastActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+       app:cardCornerRadius="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="#B4FAE9"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thank You \n For Your Order! \n Hope you Enjoy Your Meal :)"
+            android:textSize="35dp"
+            android:textColor="#026851"
+            android:textAlignment="center"
+            android:textStyle="bold|italic"
+            android:layout_gravity="center"/>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tcontinue"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/edittextbg"
+        android:backgroundTint="@color/seagreen"
+        android:text="Continue"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginRight="20dp"/>
+
+</LinearLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Restaurant</string>
+    <string name="facebook_app_id">3059349197534369</string>
+    <string name="facebook_client_token">7f2b56c6b014c47dc8bd7227d3e84ffe</string>
+    <string name="default_web_client_id">611170063490-54etoh2mjlm5jsdsn5vnm3jda3454cq5.apps.googleusercontent.com</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

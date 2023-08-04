@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FBF4F4"
+    tools:context=".UserActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ready To Place Order ?"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold|italic"
+        />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/edittextbg"
+        android:backgroundTint="#C0FBEE"
+        android:hint="Enter Your Full Name"
+        android:drawableLeft="@drawable/baseline_person_24"
+        android:paddingLeft="15dp"
+        android:drawablePadding="20dp"
+        />
+
+    <EditText
+        android:id="@+id/userphone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/edittextbg"
+        android:backgroundTint="#C0FBEE"
+        android:hint="Enter Your Phone Number"
+        android:inputType="phone"
+        android:drawableLeft="@drawable/baseline_phone_24"
+        android:paddingLeft="15dp"
+        android:drawablePadding="20dp"
+        />
+    <EditText
+        android:id="@+id/useraddress"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/search_background"
+        android:backgroundTint="#C0FBEE"
+        android:hint="Enter Your Complete Adress"
+
+        android:drawableLeft="@drawable/baseline_house_24"
+        android:paddingLeft="15dp"
+        android:drawablePadding="20dp"
+        />
+
+    <TextView
+        android:id="@+id/btnsaveuser"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edittextbg"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginLeft="20dp"
+        android:text="Save"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/seagreen"/>
+
+
+
+
+</LinearLayout>
