@@ -99,7 +99,16 @@ public class MenuFragment extends Fragment  {
             public void onClick(View view) {
                 PopupMenu popupMenu = new PopupMenu(view.getContext(), view);
                 popupMenu.setGravity(Gravity.END);
+                popupMenu.getMenu().add("My Profile").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(@NonNull MenuItem menuItem) {
 
+
+                        startActivity(new Intent(getContext(), ProfileActivity.class));
+
+                        return false;
+                    }
+                });
                 popupMenu.getMenu().add("Logout").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(@NonNull MenuItem menuItem) {
@@ -114,6 +123,7 @@ public class MenuFragment extends Fragment  {
                         return false;
                     }
                 });
+
                 popupMenu.show();
             }
         });
@@ -285,5 +295,7 @@ public class MenuFragment extends Fragment  {
             noteAdapter.stopListening();
         }
     }
+
+
 
 }

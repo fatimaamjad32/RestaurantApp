@@ -69,12 +69,15 @@ public CartAdapter(ArrayList<FoodModel> cartItems, CartAdapterListener adapterLi
             @Override
             public void onClick(View view) {
                 int currentQuantity = model.getNumberInCart();
-                currentQuantity++;
-                model.setNumberInCart(currentQuantity);
-                holder.tvQuantity.setText(String.valueOf(currentQuantity));
-                calculateSubtotalAndTotal();
+                if(currentQuantity<50){
+                    currentQuantity++;
+                    model.setNumberInCart(currentQuantity);
+                    holder.tvQuantity.setText(String.valueOf(currentQuantity));
+                    calculateSubtotalAndTotal();
 
-               updateCartItemQuantityInFirestore(model.getDocumentid(),currentQuantity);
+                    updateCartItemQuantityInFirestore(model.getDocumentid(),currentQuantity);
+                }
+
             }
         });
 

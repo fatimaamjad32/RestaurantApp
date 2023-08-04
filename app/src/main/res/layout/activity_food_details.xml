@@ -69,7 +69,7 @@
             android:textColor="@color/black"
             android:textAlignment="center"
             android:textSize="25sp"
-            android:background="@drawable/search_background"
+            android:background="@drawable/textviewbg"
             android:textStyle="bold|italic"/>
         <TextView
             android:id="@+id/number"
@@ -86,7 +86,7 @@
             android:layout_height="40dp"
             android:layout_marginLeft="20dp"
             android:textAlignment="center"
-            android:background="@drawable/search_background"
+            android:background="@drawable/textviewbg"
             android:backgroundTint="@color/seagreen"
             android:textColor="@color/black"
             android:text="+"
@@ -114,7 +114,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:textSize="22sp"
-        android:background="@drawable/edittextbg"
+        android:background="@drawable/textviewbg"
         android:backgroundTint="#02785D"
         android:textColor="@color/white"
         android:text="Add To Cart"

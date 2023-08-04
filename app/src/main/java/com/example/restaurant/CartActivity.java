@@ -78,6 +78,7 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.CartA
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         firebaseFirestore = FirebaseFirestore.getInstance();
+        ttotal.setText("100");
 
         tplaceorder.setOnClickListener(new View.OnClickListener() {
             @Override

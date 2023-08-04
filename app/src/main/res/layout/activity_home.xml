@@ -24,12 +24,9 @@
         android:id="@+id/bnv"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="10dp"
-        app:itemRippleColor="@color/white"
+        app:itemRippleColor="#D5D1D1"
         app:itemIconTint="#02785D"
-        android:background="@drawable/search_background"
+      android:background="@color/white"
         app:menu="@menu/navigation_menu"
         app:layout_constraintBottom_toBottomOf="parent" />
 

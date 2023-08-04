@@ -29,13 +29,15 @@
         android:layout_height="300dp"
         app:cardCornerRadius="100dp"
         android:layout_gravity="center"
+        android:backgroundTint="@color/seagreen"
         android:layout_marginTop="30dp">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
             android:scaleType="fitXY"
-            android:src="@drawable/deliveryman"/>
+            android:src="@drawable/bannerimg"/>
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -65,7 +67,7 @@
         android:layout_height="40dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/edittextbg"
+        android:background="@drawable/textviewbg"
         android:textColor="@color/white"
         android:layout_marginTop="30dp"
         android:text="Let's Get Started"
@@ -73,6 +75,7 @@
         android:gravity="center"
         android:backgroundTint="@color/seagreen"
         android:textSize="19sp"
+
         />
 
 </LinearLayout>

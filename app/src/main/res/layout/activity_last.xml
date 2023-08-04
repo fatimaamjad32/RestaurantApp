@@ -35,7 +35,7 @@
         android:id="@+id/tcontinue"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/edittextbg"
+        android:background="@drawable/textviewbg"
         android:backgroundTint="@color/seagreen"
         android:text="Continue"
         android:layout_marginTop="30dp"

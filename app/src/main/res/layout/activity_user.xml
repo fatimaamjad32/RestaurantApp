@@ -52,15 +52,15 @@
     <EditText
         android:id="@+id/useraddress"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:background="@drawable/search_background"
+        android:background="@drawable/edittextbg"
         android:backgroundTint="#C0FBEE"
         android:hint="Enter Your Complete Adress"
 
-        android:drawableLeft="@drawable/baseline_house_24"
+        android:drawableLeft="@drawable/baseline_location_on_24"
         android:paddingLeft="15dp"
         android:drawablePadding="20dp"
         />
@@ -71,7 +71,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/edittextbg"
+        android:background="@drawable/textviewbg"
         android:textAlignment="center"
         android:gravity="center"
         android:textColor="@color/white"

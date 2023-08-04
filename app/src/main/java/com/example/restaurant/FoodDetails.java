@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -56,8 +57,10 @@ public class FoodDetails extends AppCompatActivity {
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                number2++;
-                number.setText(String.valueOf(number2));
+                if(number2<50) {
+                    number2++;
+                    number.setText(String.valueOf(number2));
+                }
             }
         });
 
@@ -103,8 +106,11 @@ public class FoodDetails extends AppCompatActivity {
 
 
         taddtocart.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
+
+
                 int quantity = Integer.parseInt(number.getText().toString());
                 if (quantity > 0) {
 
@@ -122,17 +128,28 @@ public class FoodDetails extends AppCompatActivity {
                     managementCart.getListCart(new ManagementCart.CartDataCallback() {
                         @Override
                         public void onCartDataLoaded(ArrayList<FoodModel> cartItems) {
+
+
+
+
+
                             managementCart.insertFood(object, cartItems);
+
+
                         }
 
 
+
+
                     });
+
 
                 } else {
                     Toast.makeText(FoodDetails.this, "Quantity is zero ", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
 
 
     }

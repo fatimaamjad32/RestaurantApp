@@ -87,6 +87,7 @@ public class ManagementCart {
                     .addOnSuccessListener(documentReference -> {
                         item.setDocumentid(documentReference.getId());
                         showDialog("Item added to cart");
+
                     })
                     .addOnFailureListener(e -> {
                         Toast.makeText(context, "Failed to add item to cart", Toast.LENGTH_SHORT).show();
