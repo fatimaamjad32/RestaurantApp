@@ -104,7 +104,7 @@ public class EditPopularActivity extends AppCompatActivity {
 
 
                 DocumentReference documentReference = firebaseFirestore.collection("Populars")
-                        .document("1Pw88mB8PeEUjb1ibuMZ").collection("subcollection").document(burgerId);
+                        .document(burgerId);
 
                 burgeritem.put("title", updatedTitle);
                 burgeritem.put("description", updatedDescription);

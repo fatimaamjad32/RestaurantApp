@@ -68,7 +68,7 @@ public class Popular extends AppCompatActivity {
             }
         });
 
-        Query query = firebaseFirestore.collection("Populars").document("1Pw88mB8PeEUjb1ibuMZ").collection("subcollection")
+        Query query = firebaseFirestore.collection("Populars")
                 .orderBy("title", Query.Direction.ASCENDING);
 
         FirestoreRecyclerOptions<FoodModel> allburgeritems = new FirestoreRecyclerOptions.Builder<FoodModel>()
@@ -113,8 +113,7 @@ public class Popular extends AppCompatActivity {
                             public boolean onMenuItemClick(@NonNull MenuItem menuItem) {
 
 
-                                DocumentReference documentReference=firebaseFirestore.collection("Populars").
-                                        document("1Pw88mB8PeEUjb1ibuMZ").collection("subcollection").document(docId);
+                                DocumentReference documentReference=firebaseFirestore.collection("Populars").document(docId);
                                 documentReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void unused) {

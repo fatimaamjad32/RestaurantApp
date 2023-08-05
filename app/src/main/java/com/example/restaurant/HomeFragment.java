@@ -309,7 +309,7 @@ public class HomeFragment extends Fragment implements OnCategoryClickListener{
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         firebaseFirestore = FirebaseFirestore.getInstance();
 
-        Query query = firebaseFirestore.collection("Populars").document("1Pw88mB8PeEUjb1ibuMZ").collection("subcollection")
+        Query query = firebaseFirestore.collection("Populars")
                 .orderBy("title", Query.Direction.ASCENDING);
 
         FirestoreRecyclerOptions<FoodModel> allpopularitems = new FirestoreRecyclerOptions.Builder<FoodModel>()

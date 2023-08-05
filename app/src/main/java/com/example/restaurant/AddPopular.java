@@ -116,7 +116,7 @@ public class AddPopular extends AppCompatActivity {
                 } else {
 
                     DocumentReference documentReference = firebaseFirestore.collection("Populars")
-                            .document("1Pw88mB8PeEUjb1ibuMZ").collection("subcollection").document();
+                            .document();
 
                     popularitem.put("title", title);
                     popularitem.put("description", content);
