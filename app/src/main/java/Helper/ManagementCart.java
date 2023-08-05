@@ -62,7 +62,7 @@ public class ManagementCart {
                         .update("numberInCart", newQuantity)
                         .addOnSuccessListener(aVoid -> {
                             // Toast.makeText(context, "Quantity updated", Toast.LENGTH_SHORT).show();
-                            showDialog("Quantity Updated in Cart");
+                            //showDialog("Quantity Updated in Cart");
                         })
                         .addOnFailureListener(e -> {
                             Toast.makeText(context, "Failed to update quantity", Toast.LENGTH_SHORT).show();
@@ -86,7 +86,7 @@ public class ManagementCart {
             cartCollection.add(foodData)
                     .addOnSuccessListener(documentReference -> {
                         item.setDocumentid(documentReference.getId());
-                        showDialog("Item added to cart");
+                        //showDialog("Item added to cart");
 
                     })
                     .addOnFailureListener(e -> {
@@ -134,17 +134,17 @@ public class ManagementCart {
 
 
 
-    private void showDialog(String message) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setMessage(message)
-                .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-
-                    }
-                });
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
+//    private void showDialog(String message) {
+//        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+//        builder.setMessage(message)
+//                .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int id) {
+//
+//                    }
+//                });
+//
+//        AlertDialog dialog = builder.create();
+//        dialog.show();
+//    }
 
 }

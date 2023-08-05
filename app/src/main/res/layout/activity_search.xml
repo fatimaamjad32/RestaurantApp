@@ -16,7 +16,7 @@
         android:textColor="@color/black"
         android:layout_marginLeft="30dp"
         android:textSize="20sp"
-        android:textStyle="bold|italic"
+        android:textStyle="bold"
         android:layout_marginTop="15dp"/>
     <TextView
         android:id="@+id/tready"
@@ -27,7 +27,7 @@
         android:textColor="@color/black"
         android:layout_marginLeft="30dp"
         android:textSize="20sp"
-        android:textStyle="bold|italic"
+        android:textStyle="bold"
         />
 
 

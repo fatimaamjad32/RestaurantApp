@@ -140,10 +140,21 @@ public class BurgerActivity2 extends AppCompatActivity {
             tpopularadd.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    tpopularadd.setClickable(false);
                     int position = getAdapterPosition();
                     if (position != RecyclerView.NO_POSITION) {
                         FoodModel foodItem = noteAdapter.getItem(position);
                         addToCart(foodItem);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(BurgerActivity2.this);
+                        builder.setMessage("Item Added to Cart!!")
+                                .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        tpopularadd.setClickable(true);
+                                    }
+                                });
+
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
                     }
                 }
             });
@@ -184,7 +195,7 @@ public class BurgerActivity2 extends AppCompatActivity {
                         documentSnapshot.getReference().update("numberInCart", newQuantity)
                                 .addOnSuccessListener(aVoid -> {
 
-                                    showDialog("Item Added to Cart!");
+                                   // showDialog("Item Added to Cart!");
                                 })
                                 .addOnFailureListener(e -> {
                                     Toast.makeText(BurgerActivity2.this, "Failed to add item to cart: " + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -200,7 +211,7 @@ public class BurgerActivity2 extends AppCompatActivity {
                                 .set(foodItem)
                                 .addOnSuccessListener(aVoid -> {
 
-                                showDialog("Item Added to Cart!");
+                                //showDialog("Item Added to Cart!");
                                 })
                                 .addOnFailureListener(e -> {
                                     Toast.makeText(BurgerActivity2.this, "Failed to add item to cart: " + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -212,17 +223,17 @@ public class BurgerActivity2 extends AppCompatActivity {
                 });
     }
 
-    private void showDialog(String message) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(BurgerActivity2.this);
-        builder.setMessage(message)
-                .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-
-                    }
-                });
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
+//    private void showDialog(String message) {
+//        AlertDialog.Builder builder = new AlertDialog.Builder(BurgerActivity2.this);
+//        builder.setMessage(message)
+//                .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int id) {
+//
+//                    }
+//                });
+//
+//        AlertDialog dialog = builder.create();
+//        dialog.show();
+//    }
 
 }

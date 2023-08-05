@@ -104,12 +104,61 @@ public class SearchActivity extends AppCompatActivity {
 
     }
 
+//    private void performSearch(String searchQuery) {
+//        if (!searchQuery.isEmpty()) {
+//
+//            FirebaseFirestore.getInstance()
+//                    .collectionGroup("subcollection")
+//                    .orderBy("title")
+//                    .startAt(searchQuery)
+//                    .endAt(searchQuery + "\uf8ff")
+//                    .get(Source.SERVER)
+//                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+//                        @Override
+//                        public void onSuccess(QuerySnapshot querySnapshot) {
+//                            findtext.setVisibility(View.GONE);
+//
+//                            allResults.clear();
+//
+//
+//                            for (DocumentSnapshot document : querySnapshot.getDocuments()) {
+//                                Log.d("Testing1", "Search query: test");
+//                                FoodModel foodModel = document.toObject(FoodModel.class);
+//                                allResults.add(foodModel);
+//                            }
+//                            try {
+//                                searchAdapter.setData(allResults);
+//                            } catch (NullPointerException e) {
+//                                Toast.makeText(SearchActivity.this, "error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+//                            }
+//                            Log.d("Search", "Search query: " + searchQuery);
+//                            Log.d("Search", "Number of results: " + allResults.size());
+//                        }
+//                    })
+//                    .addOnFailureListener(new OnFailureListener() {
+//                        @Override
+//                        public void onFailure(@NonNull Exception e) {
+//                            Log.d("Searcherror", "onFailure: " + e);
+//                            Toast.makeText(SearchActivity.this, "Search failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
+//        } else {
+//
+//                findtext.setVisibility(View.VISIBLE);
+//
+//                searchAdapter.setData(new ArrayList<>());
+//                allResults.clear();
+//
+//        }
+//
+//    }
+
     private void performSearch(String searchQuery) {
         if (!searchQuery.isEmpty()) {
 
             FirebaseFirestore.getInstance()
                     .collectionGroup("subcollection")
-                    .orderBy("title")
+                    .orderBy("search")
                     .startAt(searchQuery)
                     .endAt(searchQuery + "\uf8ff")
                     .get(Source.SERVER)
@@ -144,10 +193,10 @@ public class SearchActivity extends AppCompatActivity {
                     });
         } else {
 
-                findtext.setVisibility(View.VISIBLE);
+            findtext.setVisibility(View.VISIBLE);
 
-                searchAdapter.setData(new ArrayList<>());
-                allResults.clear();
+            searchAdapter.setData(new ArrayList<>());
+            allResults.clear();
 
         }
 

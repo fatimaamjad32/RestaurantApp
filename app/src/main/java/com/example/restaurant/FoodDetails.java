@@ -2,6 +2,8 @@ package com.example.restaurant;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -110,7 +112,7 @@ public class FoodDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
+                taddtocart.setClickable(false);
                 int quantity = Integer.parseInt(number.getText().toString());
                 if (quantity > 0) {
 
@@ -135,6 +137,9 @@ public class FoodDetails extends AppCompatActivity {
 
                             managementCart.insertFood(object, cartItems);
 
+                            showDialog("Item added to cart");
+
+
 
                         }
 
@@ -152,6 +157,18 @@ public class FoodDetails extends AppCompatActivity {
 
 
 
+    }
+    private void showDialog(String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(FoodDetails.this);
+        builder.setMessage(message)
+                .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+taddtocart.setClickable(true);
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
 

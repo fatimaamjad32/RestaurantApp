@@ -92,10 +92,7 @@ public class HomeFragment extends Fragment implements OnCategoryClickListener{
             @Override
             public void onClick(View view) {
 
-                requireActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.flfragment, new MenuFragment())
-                        .addToBackStack(null)
-                        .commit();
+              replaceFragment(new MenuFragment(),"menu_fragment");
             }
         });
 
@@ -223,10 +220,21 @@ public class HomeFragment extends Fragment implements OnCategoryClickListener{
             tpopularadd.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    tpopularadd.setClickable(false);
                     int position = getAdapterPosition();
                     if (position != RecyclerView.NO_POSITION) {
                         FoodModel foodItem = noteAdapter.getItem(position);
                         addToCart(foodItem);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                        builder.setMessage("Item Added to Cart!!")
+                                .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        tpopularadd.setClickable(true);
+                                    }
+                                });
+
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
                     }
                 }
             });
@@ -251,7 +259,7 @@ public class HomeFragment extends Fragment implements OnCategoryClickListener{
 
                         documentSnapshot.getReference().update("numberInCart", newQuantity)
                                 .addOnSuccessListener(aVoid -> {
-                                    showDialog("Item Added To Cart!");
+                                    //showDialog("Item Added To Cart!");
 
                                     int position = -1;
                                     for (int i = 0; i < cartItems.size(); i++) {
@@ -280,7 +288,7 @@ public class HomeFragment extends Fragment implements OnCategoryClickListener{
                                 .document()
                                 .set(foodItem)
                                 .addOnSuccessListener(aVoid -> {
-                                    showDialog("Item Added To Cart!");
+                                    //showDialog("Item Added To Cart!");
 
                                     cartItems.add(foodItem);
                                     updateCartItemCount();
@@ -376,16 +384,11 @@ public class HomeFragment extends Fragment implements OnCategoryClickListener{
         }
     }
 
-    private void showDialog(String message) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setMessage(message)
-                .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-
-                    }
-                });
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
+    private void  replaceFragment(Fragment fragment,String tag){
+        requireActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.flfragment,fragment,tag)
+                .commit();
     }
+
 }

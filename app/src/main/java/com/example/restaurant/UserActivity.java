@@ -62,28 +62,28 @@ public class UserActivity extends AppCompatActivity {
 
                     UserModel user = new UserModel(userId, name, phone, address);
 
-    firestore.collection("Users").document(userId).set(user)
-            .addOnSuccessListener(aVoid -> {
-                if(!name.isEmpty()&& !phone.isEmpty() && !address.isEmpty()) {
-                    checkUserDetailsInFirestore();
-                    Intent i = new Intent(UserActivity.this, LastActivity.class);
-                    startActivity(i);
-                    clearCart();
+                    firestore.collection("Users").document(userId).set(user)
+                            .addOnSuccessListener(aVoid -> {
+                                if(!name.isEmpty()&& !phone.isEmpty() && !address.isEmpty()) {
+                                    checkUserDetailsInFirestore();
+                                    Intent i = new Intent(UserActivity.this, LastActivity.class);
+                                    startActivity(i);
+                                    clearCart();
+                                }else {
+                                    Toast.makeText(UserActivity.this, "All Fields are required", Toast.LENGTH_SHORT).show();
+                                }
+
+
+                            })
+                            .addOnFailureListener(e -> {
+                                Toast.makeText(UserActivity.this, "Failed to save details"+e, Toast.LENGTH_SHORT).show();
+                            });
                 }else {
-                    Toast.makeText(UserActivity.this, "All Fields are required", Toast.LENGTH_SHORT).show();
-                }
-
-
-            })
-            .addOnFailureListener(e -> {
-                Toast.makeText(UserActivity.this, "Failed to save details"+e, Toast.LENGTH_SHORT).show();
-            });
-}else {
-
-}
-
 
                 }
+
+
+            }
 
         });
 
@@ -261,4 +261,6 @@ public class UserActivity extends AppCompatActivity {
 
                 });
     }
+
+
 }

@@ -102,12 +102,10 @@
         android:layout_below="@+id/layout2"
         android:layout_centerInParent="true"
         android:layout_marginTop="30dp"
-        android:fontFamily="casual"
-        android:textColor="@color/black"
         android:text="Description Here"
         android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/taddtocart"
