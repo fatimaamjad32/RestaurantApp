@@ -100,14 +100,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginLeft="30dp"
-
                 android:layout_marginTop="25dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Free Delivery"
+                    android:layout_gravity="center"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="20sp"/>
@@ -115,7 +114,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="JULY 23 -- JULY 29"
+                    android:text="AUGUST 08 -- AUGUST 14"
                     android:textStyle="bold|italic"
                     android:layout_marginTop="5dp"/>
 

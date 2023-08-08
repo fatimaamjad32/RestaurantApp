@@ -7,7 +7,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,14 +19,11 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 
 import org.checkerframework.checker.nullness.qual.Nullable;
 
-import java.util.ArrayList;
-
-import Helper.ManagementCart;
 import Models.FoodModel;
 
 public class FoodDetails extends AppCompatActivity {
@@ -35,7 +31,7 @@ public class FoodDetails extends AppCompatActivity {
     private TextView taddtocart, detailtitle, detaildescription, detailprice, plus, minus, number;
 
     ImageView detailimg;
-    int number2 = 0;
+    int number2 = 1;
     private FoodModel object;
     FirebaseFirestore firebaseFirestore;
 
@@ -54,7 +50,6 @@ public class FoodDetails extends AppCompatActivity {
         String currentUserUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         firebaseFirestore = FirebaseFirestore.getInstance();
 
-        ManagementCart managementCart = new ManagementCart(this, firebaseFirestore, currentUserUid);
 
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,42 +108,18 @@ public class FoodDetails extends AppCompatActivity {
             public void onClick(View view) {
 
                 taddtocart.setClickable(false);
+
                 int quantity = Integer.parseInt(number.getText().toString());
+
                 if (quantity > 0) {
-
-
                     String title = detailtitle.getText().toString();
                     String description = detaildescription.getText().toString();
                     String price = detailprice.getText().toString();
-                    FoodModel model = new FoodModel();
-                    String imageUri = model.getImageUri();
+                    String imageUri = data.getStringExtra("imageUri");
 
-
-                    object = new FoodModel(title, imageUri, description, price, quantity);
-
-
-                    managementCart.getListCart(new ManagementCart.CartDataCallback() {
-                        @Override
-                        public void onCartDataLoaded(ArrayList<FoodModel> cartItems) {
-
-
-
-
-
-                            managementCart.insertFood(object, cartItems);
-
-                            showDialog("Item added to cart");
-
-
-
-                        }
-
-
-
-
-                    });
-
-
+                    FoodModel model = new FoodModel(title, imageUri, description, price, quantity);
+                    addToCart(model);
+                    showDialog("Item added to cart");
                 } else {
                     Toast.makeText(FoodDetails.this, "Quantity is zero ", Toast.LENGTH_SHORT).show();
                 }
@@ -169,6 +140,53 @@ taddtocart.setClickable(true);
 
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    private void addToCart(FoodModel foodItem) {
+        String currentUserUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+
+        firebaseFirestore.collection("Cart")
+                .document(currentUserUid)
+                .collection("Items")
+                .whereEqualTo("title", foodItem.getTitle())
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    if (!queryDocumentSnapshots.isEmpty()) {
+
+                        DocumentSnapshot documentSnapshot = queryDocumentSnapshots.getDocuments().get(0);
+                        int currentQuantity = documentSnapshot.toObject(FoodModel.class).getNumberInCart();
+                        int newQuantity = currentQuantity + 1;
+
+                        documentSnapshot.getReference().update("numberInCart", newQuantity)
+                                .addOnSuccessListener(aVoid -> {
+
+                                    // showDialog("Item Added to Cart!");
+                                })
+                                .addOnFailureListener(e -> {
+                                    Toast.makeText(FoodDetails.this, "Failed to add item to cart: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                });
+                    } else {
+
+                        foodItem.setNumberInCart(1);
+
+                        firebaseFirestore.collection("Cart")
+                                .document(currentUserUid)
+                                .collection("Items")
+                                .document()
+                                .set(foodItem)
+                                .addOnSuccessListener(aVoid -> {
+
+                                    //showDialog("Item Added to Cart!");
+                                })
+                                .addOnFailureListener(e -> {
+                                    Toast.makeText(FoodDetails.this, "Failed to add item to cart: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                });
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(FoodDetails.this, "Failed to add item to cart: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
     }
 
 
